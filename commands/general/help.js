@@ -1,6 +1,7 @@
-const config = module.require(`D:\\GuardianAngel\\GuardianAngelJS\\config.json`)
+const config = require(`../../config.json`);
 
 module.exports.run = async (bot, message, args) => {
+
     let anyone = message.member.hasPermission(`SEND_MESSAGES`);
     let mod = message.member.hasPermission(`MANAGE_MESSAGES`);
     
