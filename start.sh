@@ -1,6 +1,3 @@
-git pull https://github.com/KitkatKayla/GuardianAngel
-wait 2000
-print KitkatKayla
-wait 2000
-print Piratepatch1
+git pull https://KitkatKayla:Piratepatch1@github.com/KitkatKayla/GuardianAngel.git master
+
 nodemon bot.js
