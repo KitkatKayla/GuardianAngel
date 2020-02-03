@@ -1,4 +1,5 @@
 const config = require(`./config.json`);
+const auth = require(`.././GABot/AuthToken/token.json`)
 const discord = require(`discord.js`);
 const fs = require(`fs`);
 
@@ -14,7 +15,7 @@ bot.on(`ready`, async () => {
     bot.user.setActivity(`${config.prefix}help`, {type: `PLAYING`});
 });
 
-bot.login(config.token);
+bot.login(auth.token);
 // end of starting series
 
 console.log(`----------------------------------------------`)
