@@ -1,5 +1,5 @@
 const config = require(`./config.json`);
-const auth = require(`.././GABot/AuthToken/token.json`)
+const auth = require(`/GABot/AuthToken/token.json`)
 const discord = require(`discord.js`);
 const fs = require(`fs`);
 
