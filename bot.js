@@ -22,9 +22,6 @@ console.log(`----------------------------------------------`)
 
 
 
-
-
-
 // prefix manager
 bot.on(`message`, async message => {
 
@@ -45,11 +42,9 @@ bot.on(`message`, async message => {
 
 
 
-
-
-
 // command handler - test_commands
 fs.readdir(`./commands/test_commands/`, (err, files) => {
+
     if(err) console.error(err);
 
     console.log(`Loading test_commands`);  
@@ -66,11 +61,13 @@ fs.readdir(`./commands/test_commands/`, (err, files) => {
         bot.commands.set(props.help.name, props);
     });
     console.log(`----------------------------------------------`);
+
 });
 // end test-commands
 
 //command handler - moderation
 fs.readdir(`./commands/moderation/`, (err, files) => {
+
     if(err) console.error(err);
 
     console.log(`Loading moderation`);
@@ -93,6 +90,7 @@ fs.readdir(`./commands/moderation/`, (err, files) => {
 
 // command handler - general
 fs.readdir(`./commands/general/`, (err, files) => {
+    
     if(err) console.error(err);
 
     console.log(`Loading general`);
