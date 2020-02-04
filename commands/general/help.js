@@ -12,6 +12,7 @@ module.exports.run = async (bot, message, args) => {
                 name: bot.user.username,
                 icon_url: bot.user.avatarURL
             },
+            timestamp: new Date(),
             title: `Guardian Angel | Commands`,
             description: 
         (`Guardian Angel is a custom bot, being designed to serve this server and possibly others in the future. I am being programmed to hopefully advance far enough to take priority over most of the other popular bots.

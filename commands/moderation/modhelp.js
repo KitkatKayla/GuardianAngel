@@ -5,6 +5,11 @@ module.exports.run = async (bot, message, args) => {
     if(mod)
     message.author.send({embed: {
         color: 16754418,
+        author: {
+            name: bot.user.username,
+            icon_url: bot.user.avatarURL
+        },
+        timestamp: new Date(),
         title: `Guardian Angel | Mod Commands`,
         description:
     `*Please note that \`modhelp\` may not contain all your avaliable commands. This section is strictly for commands intended for moderation.*
