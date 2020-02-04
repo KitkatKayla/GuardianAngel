@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
         (`Guardian Angel is a custom bot, being designed to serve this server and possibly others in the future. I am being programmed to hopefully advance far enough to take priority over most of the other popular bots.
         
         • Type \`&help <command>\` for more info on that command!
-        • DM Kayla for any bot idea submissions\n •Find out how you can help support the bot in ${message.guild.channels.get('668523943682113606').toString()}\n •My prefix is \`${config.prefix}\`. The option to change this is planned.
+        • DM \`Snowflake#1001\` for any bot idea submissions\n •Find out how you can help support the bot in ${message.guild.channels.get('668523943682113606').toString()}\n •My prefix is \`${config.prefix}\`. The option to change this is planned.
             
         **Command Information**
         Basic \`user\` command information:
