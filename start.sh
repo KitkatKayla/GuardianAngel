@@ -1,3 +1,2 @@
-git pull https://KitkatKayla:Piratepatch1@github.com/KitkatKayla/GuardianAngel.git master
-
+git pull https://github.com/KitkatKayla/GuardianAngel
 nodemon bot.js
