@@ -17,14 +17,12 @@ bot.on(`ready`, async () => {
 
 bot.login(auth.token);
 // end of starting series
-
 console.log(`----------------------------------------------`)
 
 
 
 // prefix manager
 bot.on(`message`, async message => {
-
     if(message.author.bot) return;
     if(message.channel.type === `dm`) return;
 
@@ -36,7 +34,6 @@ bot.on(`message`, async message => {
 
     let cmd = bot.commands.get(command.slice(prefix.length));
     if(cmd) cmd.run(bot, message, args);
-
 });
 // end prefix manager
 
@@ -44,7 +41,6 @@ bot.on(`message`, async message => {
 
 // command handler - test_commands
 fs.readdir(`./commands/test_commands/`, (err, files) => {
-
     if(err) console.error(err);
 
     console.log(`Loading test_commands`);  
@@ -61,13 +57,11 @@ fs.readdir(`./commands/test_commands/`, (err, files) => {
         bot.commands.set(props.help.name, props);
     });
     console.log(`----------------------------------------------`);
-
 });
 // end test-commands
 
 //command handler - moderation
 fs.readdir(`./commands/moderation/`, (err, files) => {
-
     if(err) console.error(err);
 
     console.log(`Loading moderation`);
@@ -84,13 +78,11 @@ fs.readdir(`./commands/moderation/`, (err, files) => {
         bot.commands.set(props.help.name, props);
     });
     console.log(`----------------------------------------------`);
-
 });
 // end moderation
 
 // command handler - general
 fs.readdir(`./commands/general/`, (err, files) => {
-    
     if(err) console.error(err);
 
     console.log(`Loading general`);
@@ -107,6 +99,5 @@ fs.readdir(`./commands/general/`, (err, files) => {
         bot.commands.set(props.help.name, props);
     });
     console.log(`----------------------------------------------`);
-
 });
 // end general
