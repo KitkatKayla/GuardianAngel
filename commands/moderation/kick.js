@@ -38,7 +38,6 @@ module.exports.run = async(bot, message, args) => {
     });
     // end of permission checks
 
-    // deletes command msg
     message.delete(1)
 
     // excecution
