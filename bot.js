@@ -1,6 +1,11 @@
+
+
+// Version (Local : VPS) control
+//const auth = require(`/GABot/AuthToken/token.json`) // Edit file path for local token.json file
+const auth = require(`../token.json`)
+
+
 const config = require(`./config.json`);
-// const auth = require(`/GABot/AuthToken/token.json`) // Main version
-const auth = require(`../token.json`) // Personal desktop version
 const discord = require(`discord.js`);
 const fs = require(`fs`);
 
