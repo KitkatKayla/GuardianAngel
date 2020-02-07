@@ -44,7 +44,7 @@ module.exports.run = async(bot, message, args) => {
     // message.guild.member(user).kick(kickReason);
 
     // kick comnfirmation embed message
-    (message.channel.send({embed: {     //`kicked from server` confirmation embed
+    message.channel.send({embed: {     //`kicked from server` confirmation embed
         color: 65280,
         description: `✅ | **${user} has been kicked from the server.**`,
         author: {
@@ -56,7 +56,7 @@ module.exports.run = async(bot, message, args) => {
             },
         timestamp: new Date()
     }
-    }));
+    });
 
     // kick log embed message
     let kickEmbed = new discord.RichEmbed()
