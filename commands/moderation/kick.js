@@ -38,8 +38,6 @@ module.exports.run = async(bot, message, args) => {
     });
     // end of permission checks
 
-    message.delete(1)
-
     // excecution
     // message.guild.member(user).kick(kickReason);
 
