@@ -18,7 +18,7 @@ module.exports.run = async(bot, message, args) => {
         }
     }});
 
-    // Command syntax check; checks whether enough arguments were made
+    // Command syntax checks; checks whether enough arguments were made
     if(!kickReason) return message.channel.send({embed: {
         color: 16711680,
         description: `Too few arguments were given. \n \n Usage: \`${config.prefix}kick <mention> <reason>\``,
