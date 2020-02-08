@@ -96,7 +96,7 @@ module.exports.run = async(bot, message, args) => {
         let newlogs = message.guild.channels.find(channel => channel.name === `logs`);
         newlogs.send({embed: kickEmbed})
     }, ms(`1.5s`));
-}
+};
 
 module.exports.help = {
     name: `kick`

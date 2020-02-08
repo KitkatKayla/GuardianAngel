@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
         title: `❌ | You must be a part of the moderation team to execute this command`
     }});
 
-}
+};
 
 module.exports.help = {
     name: "modinfo"

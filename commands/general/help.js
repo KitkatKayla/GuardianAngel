@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
         color: 16754418,
         description: `✅ | **Check your DMs!**`
     }});
-}
+};
 
 module.exports.help = {
     name: `info`
