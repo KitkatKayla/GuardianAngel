@@ -1,12 +1,14 @@
 const discord = module.require(`discord.js`);
 const ms = module.require(`ms`);
+const config = require(`../../config.json`);
 
 module.exports.run = async(bot, message, args) => {
     let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    let kickReason = args.join(` `).slice(22);
+    let kickReason = args[1]
     let log = message.guild.channels.find(channel => channel.name === `public-logs`);
 
-    // permission check; ends the method if caster lacks the required permissions
+    // Checks
+    // Permission check; ends the method if caster lacks the required permissions
     if(!message.member.hasPermission(`MANAGE_MESSAGES`)) return message.channel.send({embed: {
         color: 16711680,
         description: `You are not permitted to use this command!`,
@@ -14,35 +16,41 @@ module.exports.run = async(bot, message, args) => {
             name: `ERROR ❌`
 
         }
-    }
-    });
+    }});
 
-    // permission check; ends the method if args[0] (mention) could not be found
-    if(!user) return message.channel.send({embed: {
+    // Command syntax check; checks whether enough arguments were made
+    if(!kickReason) return message.channel.send({embed: {
         color: 16711680,
-        description: `The user you mentioned could not be found.`,
+        description: `Too few arguments were given. \n \n Usage: \`${config.prefix}kick <mention> <reason>\``,
         author: {
             name: `ERROR ❌`
         }
-    }
-    });
+    }});
 
-    // permission check; ends the method if user being kicked is a moderator
+    // Permission check; ends the method if args[0] (mention) could not be found
+    if(!user) return message.channel.send({embed: {
+        color: 16711680,
+        description: `A user by that name couldn't be found.`,
+        author: {
+            name: `ERROR ❌`
+        }
+    }});
+
+    // Permission check; ends the method if user being kicked is a moderator
     if(user.hasPermission(`MANAGE_MESSAGES`)) return message.channel.send({embed: {
         color: 16711680,
         description: `I cannot kick this user!`,
         author: {
             name: `ERROR ❌`
         }
-    }
-    });
-    // end of permission checks
+    }});
+    // End of checks
 
-    // excecution
-    // message.guild.member(user).kick(kickReason);
+    // Excecution
+    // Message.guild.member(user).kick(kickReason);
 
-    // kick comnfirmation embed message
-    message.channel.send({embed: {     //`kicked from server` confirmation embed
+    // Kick comnfirmation embed message
+    message.channel.send({embed: {     // `kicked from server` confirmation embed
         color: 65280,
         description: `✅ | **${user} has been kicked from the server.**`,
         author: {
@@ -56,7 +64,7 @@ module.exports.run = async(bot, message, args) => {
     }
     });
 
-    // kick log embed message
+    // Kick log embed message
     let kickEmbed = new discord.RichEmbed()
         .setAuthor(`Mod Action | Kick | ${user.user.tag}`, message.author.avatarURL)
         .setColor(`#FF0000`)
@@ -66,7 +74,7 @@ module.exports.run = async(bot, message, args) => {
         .addField(`Date of Mod Action`, new Date())
         .setFooter(`ID | ${user.id}`,bot.user.avatarURL);
 
-    // logging
+    // Logging
     try {    
         log.send({embed: kickEmbed})    
         return;
@@ -81,8 +89,8 @@ module.exports.run = async(bot, message, args) => {
         message.guild.createChannel(`logs`, {type: `text`});
     }
 
-    // sets delay between creation of new `log` channel and log being sent to said channel
-    // avoids bot attempting to send log prior to `log` channel creation
+    // Sets delay between creation of new `log` channel and log being sent to said channel
+    // Avoids bot attempting to send log prior to `log` channel creation
     setTimeout(() => {
         let newlogs = message.guild.channels.find(channel => channel.name === `logs`);
         newlogs.send({embed: kickEmbed})

@@ -1,15 +1,7 @@
-
-
-// Version (Local : VPS) control
-//const auth = require(`/GABot/AuthToken/token.json`) // Edit file path for local token.json file
-const auth = require(`../token.json`)
-
-
-const config = require(`./config.json`);
 const discord = require(`discord.js`);
 const fs = require(`fs`);
-
-const prefix = config.prefix;
+const config = require(`./config.json`);
+const auth = require(`../token.json`);
 
 //starting series
 const bot = new discord.Client();
@@ -36,9 +28,9 @@ bot.on(`message`, async message => {
     let command = messageArray[0];
     let args = messageArray.slice(1);
 
-    if(!command.startsWith(prefix)) return;
+    if(!command.startsWith(config.prefix)) return;
 
-    let cmd = bot.commands.get(command.slice(prefix.length));
+    let cmd = bot.commands.get(command.slice(config.prefix.length));
     if(cmd) cmd.run(bot, message, args);
 });
 // end prefix manager
