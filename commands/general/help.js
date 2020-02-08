@@ -1,14 +1,15 @@
 const config = require(`../../config.json`);
 
 module.exports.run = async (bot, message, args) => {
-    let anyone = message.member.hasPermission(`SEND_MESSAGES`);
-    let mod = message.member.hasPermission(`MANAGE_MESSAGES`);
 
     message.author.send({embed: {
         color: 16754418,
         author: {
             name: bot.user.username,
             icon_url: bot.user.avatarURL
+        },
+        thumbnail: {
+            url: `https://i.pinimg.com/originals/c5/38/df/c538df94fc55387873b7d8aed4499786.jpg`
         },
         timestamp: new Date(),
         title: `Guardian Angel | Commands`,
