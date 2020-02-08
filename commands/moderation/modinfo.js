@@ -18,8 +18,8 @@ module.exports.run = async (bot, message, args) => {
         
     **__୰ Power Cats ౿__**
     Excecutable by members of the \`୰ Power Cats ౿\` family or above
-    • **kick** [@mention reason] - kicks the user
-    • **ban** [@mention duration reason] - bans the user
+    • **kick** <@mention> <reason> - kicks the user
+    • **ban** <@mention> <duration> <reason> - bans the user
         
     **__୰۾ Super Cats ۾౿__**
     Excecutable by members of the \`୰۾ Super Cats ۾౿\` family or above
