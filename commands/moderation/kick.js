@@ -1,4 +1,4 @@
-const discord = module.require(`discord.js`);
+const Discord = module.require(`discord.js`);
 const ms = module.require(`ms`);
 const DateFormat = module.require(`dateformat`);
 const config = require(`../../config.json`);
@@ -66,7 +66,7 @@ module.exports.run = async(bot, message, args) => {
     });
 
     // Kick log embed message
-    let kickEmbed = new discord.RichEmbed()
+    let kickEmbed = new Discord.RichEmbed()
         .setAuthor(`Mod Action | Kick | ${user.user.tag}`, message.author.avatarURL)
         .setColor(`#FF0000`)
         .addField(`User`, `${user}`, true)

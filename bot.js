@@ -35,29 +35,6 @@ bot.on(`message`, async message => {
 });
 // end prefix manager
 
-
-
-// command handler - test_commands
-fs.readdir(`./commands/test_commands/`, (err, files) => {
-    if(err) console.error(err);
-
-    console.log(`Loading test_commands`);  
-    let jsfiles = files.filter(f => f.split(`.`).pop() === `js`);           // splits file names into <name> + <extension>; grabs extention `js`.
-    if(jsfiles.length <= 0){                                                // if number of files in destination (line 22) is <= 0, continue. Otherwise, line 32.
-        console.log(`!!test_commands_ERROR!!`);
-        console.log(`----------------------------------------------`);
-        return;
-    }                                                                       
-
-    jsfiles.forEach((f, i) => {                                             // for each js file in destination (line 22), do the following.
-        let props = require(`./commands/test_commands/${f}`);                             
-        console.log(`${i + 1}: ${f} loaded`);
-        bot.commands.set(props.help.name, props);
-    });
-    console.log(`----------------------------------------------`);
-});
-// end test-commands
-
 //command handler - moderation
 fs.readdir(`./commands/moderation/`, (err, files) => {
     if(err) console.error(err);
