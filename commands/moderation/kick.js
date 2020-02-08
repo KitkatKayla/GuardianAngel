@@ -1,5 +1,6 @@
 const discord = module.require(`discord.js`);
 const ms = module.require(`ms`);
+const DateFormat = module.require(`dateformat`);
 const config = require(`../../config.json`);
 
 module.exports.run = async(bot, message, args) => {
@@ -71,7 +72,7 @@ module.exports.run = async(bot, message, args) => {
         .addField(`User`, `${user}`, true)
         .addField(`Moderator`, `${message.author}`, true)
         .addField(`Reason`, kickReason)
-        .addField(`Date of Mod Action`, new Date())
+        .addField(`Date of Mod Action`, DateFormat(new Date()))
         .setFooter(`ID | ${user.id}`,bot.user.avatarURL);
 
     // Logging
