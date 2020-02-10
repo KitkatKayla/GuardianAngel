@@ -1,0 +1,25 @@
+{
+  "name": "npm-packages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KitkatKayla/GuardianAngel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KitkatKayla/GuardianAngel/issues"
+  },
+  "homepage": "https://github.com/KitkatKayla/GuardianAngel#readme",
+  "dependencies": {
+    "@discordjs/uws": "^10.149.0",
+    "dateformat": "^3.0.3",
+    "discord.js": "^11.5.1",
+    "ms": "^2.1.2"
+  }
+}
