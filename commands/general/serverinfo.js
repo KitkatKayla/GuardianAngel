@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
         .setTitle(`Server Information`)
         .setAuthor(`${message.guild.name}`)
         .setThumbnail(`${message.guild.iconURL}`) // server image
-        .addField(`Channel Count`, ``, true)
+        .addField(`Channel Count`, `<value>`, true)
         .addField(`Member Count`, `${message.guild.memberCount}`, true)
         .addField(`Role Count`, `<value>`, true)
         .addField(`Value 1`, `<value>`, true)
