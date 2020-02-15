@@ -7,6 +7,7 @@ module.exports.run = async(bot, message, args) => {
     let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let kickReason = args[1]
     let log = message.guild.channels.find(channel => channel.name === `public-logs`);
+    let userAvatar = message.guild.member(message.mentions.users.first()).avatarURL
 
     // Checks
     // Permission check; ends the method if caster lacks the required permissions
@@ -67,13 +68,13 @@ module.exports.run = async(bot, message, args) => {
 
     // Kick log embed message
     let kickEmbed = new Discord.RichEmbed()
-        .setAuthor(`Mod Action | Kick | ${user.user.tag}`, message.author.avatarURL)
+        .setAuthor(`Mod Action | Kick | ${user.user.tag}`, userAvatar)
         .setColor(`#FF0000`)
         .addField(`User`, `${user}`, true)
         .addField(`Moderator`, `${message.author}`, true)
         .addField(`Reason`, kickReason)
-        .addField(`Date of Mod Action`, DateFormat(new Date()))
-        .setFooter(`ID | ${user.id}`,bot.user.avatarURL);
+        .addField(`Date of Mod Action`, )
+        .setFooter(`ID | ${user.id} ${DateFormat(new Date())}`);
 
     // Logging
     try {    

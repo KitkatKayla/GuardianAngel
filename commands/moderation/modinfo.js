@@ -1,5 +1,4 @@
 module.exports.run = async (bot, message, args) => {
-
     let mod = message.member.hasPermission(`MANAGE_MESSAGES`);
 
     if(mod)
@@ -34,7 +33,6 @@ module.exports.run = async (bot, message, args) => {
         color: 16711680,
         title: `❌ | You must be a part of the moderation team to execute this command`
     }});
-
 };
 
 module.exports.help = {

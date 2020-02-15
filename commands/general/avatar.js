@@ -1,7 +1,6 @@
 const Discord = module.require(`discord.js`);
 
 module.exports.run = async(bot, message, args) => {
-
     if(!message.mentions.users.size) {
         let avatarEmbed = new Discord.RichEmbed()
         .setColor(`#FFA6F2`)
@@ -18,7 +17,7 @@ module.exports.run = async(bot, message, args) => {
         .setImage(user.displayAvatarURL)
 
         return message.channel.send(avatarEmbed);
-        });
+    });
 };
 
 module.exports.help = {
