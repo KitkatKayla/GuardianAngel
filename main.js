@@ -25,7 +25,7 @@ bot.on(`message`, async message => {
     if(message.channel.type === `dm`) return;
 
     let messageArray = message.content.split(/\s+/g);
-    let command = messageArray[0];
+    let command = messageArray[0].toLowerCase();
     let args = messageArray.slice(1);
 
     if(!command.startsWith(config.prefix)) return;
@@ -34,6 +34,8 @@ bot.on(`message`, async message => {
     if(cmd) cmd.run(bot, message, args);
 });
 // end prefix manager
+
+
 
 //command handler - moderation
 fs.readdir(`./commands/moderation/`, (err, files) => {

@@ -1,5 +1,7 @@
 const Discord = module.require(`discord.js`);
 
+//YET TO FINISH
+
 module.exports.run = async (bot, message, args) => {
     let serverInfo = new Discord.RichEmbed()
         .setColor(`#FFA6F2`)

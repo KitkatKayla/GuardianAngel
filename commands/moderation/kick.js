@@ -7,7 +7,6 @@ module.exports.run = async(bot, message, args) => {
     let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let kickReason = args[1]
     let log = message.guild.channels.find(channel => channel.name === `public-logs`);
-    let userAvatar = message.guild.member(message.mentions.users.first()).avatarURL
 
     // Checks
     // Permission check; ends the method if caster lacks the required permissions
@@ -21,13 +20,15 @@ module.exports.run = async(bot, message, args) => {
     }});
 
     // Command syntax checks; checks whether enough arguments were made
-    if(!kickReason) return message.channel.send({embed: {
+    if(!kickReason || !args) return message.channel.send({embed: {
         color: 16711680,
         description: `Too few arguments were given. \n \n Usage: \`${config.prefix}kick <mention> <reason>\``,
         author: {
             name: `ERROR ❌`
         }
     }});
+
+    let userAvatar = message.guild.member(message.mentions.users.first()).avatarURL // "avatarURL not defined" error when placed with other variables.
 
     // Permission check; ends the method if args[0] (mention) could not be found
     if(!user) return message.channel.send({embed: {
@@ -73,7 +74,7 @@ module.exports.run = async(bot, message, args) => {
         .addField(`User`, `${user}`, true)
         .addField(`Moderator`, `${message.author}`, true)
         .addField(`Reason`, kickReason)
-        .addField(`Date of Mod Action`, )
+        .addField(`Date of Mod Action`, DateFormat(new Date()))
         .setFooter(`ID | ${user.id} ${DateFormat(new Date())}`);
 
     // Logging
