@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         .setAuthor(`${message.guild.name}`)
         .setThumbnail(`${message.guild.iconURL}`) // server image
         .addField(`Channel Count`, `<value>`, true)
-        .addField(`Member Count`, `${message.guild.memberCount}`, true)
+        .addField(`Total User Count`, `${message.guild.memberCount}`, true)
         .addField(`Role Count`, `<value>`, true)
         .addField(`Value 1`, `<value>`, true)
         .addField(`Value 2`, `<value>`, true)
